@@ -1,0 +1,23 @@
+class Solution {
+    public int smallestDivisor(int[] nums, int threshold) {
+        int low=1;
+        int high=1;
+        int ans=0;
+        Arrays.sort(nums);
+        high=nums[nums.length-1];
+        while(low<=high){
+            int mid=(low+high)/2;
+            int sum=0;
+            for(int num:nums){
+                sum+=Math.ceil((float)num/mid);
+            }
+            if(sum<=threshold){
+                ans=mid;
+                high=mid-1;
+            }else{
+                low=mid+1;
+            }
+        }
+            return ans;
+}
+}
