@@ -1,6 +1,5 @@
 class Solution {
     public int smallestIndex(int[] nums) {
-      int minindex=Integer.MAX_VALUE;
       for(int i=0;i<nums.length;i++){
         int sum=0;
         int indexvalue=nums[i];
@@ -10,9 +9,9 @@ class Solution {
         }  
         sum+=indexvalue;
         if(sum==i){
-            minindex=Math.min(minindex,i);
+            return i;
         }
       }
-        return minindex==Integer.MAX_VALUE?-1:minindex;
+        return -1;
     }
 }
