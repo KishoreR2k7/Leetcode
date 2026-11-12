@@ -1,34 +1,32 @@
 class Solution {
     public int incsub(int[] arr){
-        int max=0;
-        for(int i=0;i<arr.length;i++){
-            int count=1;
-            int start=arr[i];
-            for(int j=i+1;j<arr.length;j++){
-                if(start<arr[j]){
-                    start=arr[j];
+        int max=1;
+        int count=1;
+        int start=arr[0];
+            for(int i=1;i<arr.length;i++){
+                if(start<arr[i]){
+                    start=arr[i];
                     count++;
                 }else{
-                    break;
+                    start=arr[i];
+                    count=1;
                 }
-            }
             max=Math.max(count,max);
         }
         return max;
     }
     public int decsub(int[] arr){
-        int max=0;
-        for(int i=0;i<arr.length;i++){
+        int max=1;
             int count=1;
-            int start=arr[i];
-            for(int j=i+1;j<arr.length;j++){
-                if(start>arr[j]){
-                    start=arr[j];
+            int start=arr[0];
+            for(int i=1;i<arr.length;i++){
+                if(start>arr[i]){
+                    start=arr[i];
                     count++;
                 }else{
-                    break;
+                    start=arr[i];
+                    count=1;
                 }
-            }
             max=Math.max(count,max);
         }
         return max;
